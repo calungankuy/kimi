@@ -61,5 +61,89 @@ Route::get('biodata/{nama}/{alamat}/{umur}/{hobi}',function($a,$b,$c,$d)
            '<br> Umur saya ' . $c;
 });
 
+// Route::get('name/{param?}', function($a = "KIMI "){
+//     return 'Your name is ' . $a;
+// )};
+
+Route::get('pesan/{makan?}/{minum?}/{harga?}',function($a = null, $b = null,$c=null )
+{
+    $str = "Silakan Pesan Terlebih Dahulu";
+
+    if (isset($a)) {
+        $str = "Anda Memesan $a";
+    }
+     if (isset($b)) {
+        $str .= " dan $b";
+    }
+
+    if (isset($c)) {
+        $str .= " Dengan harga $c";
+
+        if ($c >= 35000) {
+            $str .= " Anda mendapatkan size Large";
+            # code...
+        }
+        else if ($c >= 25000) {
+                $str .= " Anda mendapatkan size Medium";
+                # code...
+            }
+        else if ($c < 25000) {
+                $str .= " Anda mendapatkan size Small";
+                # code...
+            }
+    }
+
+    return $str;
+});
+
+Route::get('datadiri/{Nama?}/{BB?}/{Umur?}', function($a = null, $b= null, $c= null)
+{
+   $imi = "Silakan Isi Data Terlebih Dahulu";
+
+   if (isset($a)) {
+        $imi = "Nama Anda  :$a";
+       # code...
+   }
+     if (isset($b)) {
+        $imi .= " Berat Badan :$b";
+
+        if ($b >= 75 && $b <100) {
+            $imi .= " Anda harus turun berat badan";
+            # code...
+        }
+        else if ($b >= 65 && $b <75) {
+                $imi .= " Berat badan anda ideal";
+                # code...
+            }
+        else if ($b >= 50 && $b <65) {
+                $imi .= " Naikan berat bdan anda";
+                # code...
+            }
+        else if ($b < 50) {
+                $imi .= " Anda kurang nutrisi";
+                # code...
+            }
+    }
+        if (isset($c)) {
+        $imi .= " Umur :$c";
+
+        if ($c >= 50 && $c <60) {
+            $imi .= " Perwira";
+            # code...
+        }
+        else if ($c >= 40    && $c <50) {
+                $imi .= " Laksamana";
+                # code...
+            }
+        else if ($c >= 30 && $c <40) {
+                $imi .= " Jendral";
+                # code...
+            }
+    }
+    return $imi;
+});
+
+
+
 
 
