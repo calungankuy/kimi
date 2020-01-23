@@ -1,5 +1,5 @@
 <?php
-
+use App\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -143,7 +143,22 @@ Route::get('datadiri/{Nama?}/{BB?}/{Umur?}', function($a = null, $b= null, $c= n
     return $imi;
 });
 
+Route::get('tesmodel', function()
+{
+    $query = App\Post::all();
+    return $query;
+});
 
+Route::get('tesmodel1', function()
+{
+    $post = App\Post::find(1);
+    return $post;
 
+});
 
+Route::get('tesmodel2', function()
+{
+    $post = App\Post::where('title','like','%cepat nikah%')->get();
+    return $post;
+});
 
