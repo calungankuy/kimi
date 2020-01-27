@@ -162,3 +162,27 @@ Route::get('tesmodel2', function()
     return $post;
 });
 
+Route::get('dataproduks/ambil3', function ()
+{
+    $data = App\Produk::all()
+    ->take(3);
+    return $data;
+});
+Route::get('dataproduks/select', function ()
+{
+    $data = App\Produk::select('Nama_Barang','Tanggal_Pembelian','Jenis_Barang')->first();
+    return $data;
+});
+Route::get('dataproduks/{Nama_Barang}/{Tanggal_Pembelian}/{Jenis_Barang}/{Kode_Barang}/{Tenaga_Penjual}/{Kota_Tujuan}/{Jumlah_Barang}', function($judul,$pengarang,$penerbit,$tahun,$kategori,$harga,$jumlahhal) {
+    $post = new App\Produk;
+    $post->Nama_Barang = $judul;
+    $post->Tanggal_Pembelian = $pengarang;
+    $post->Jenis_Barang = $penerbit;
+    $post->Kode_Barang = $tahun;
+    $post->Tenaga_Penjual = $kategori;
+    $post->Kota_Tujuan = $harga;
+    $post->Jumlah_Barang = $jumlahhal;
+    $post->save();
+    return $post;
+
+});
