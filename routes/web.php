@@ -186,3 +186,15 @@ Route::get('dataproduks/{Nama_Barang}/{Tanggal_Pembelian}/{Jenis_Barang}/{Kode_B
     return $post;
 
 });
+
+
+Route::get('latihan', 'LatihanController@halo');
+Route::get('Tatambahan/{kimi?}/{jay?}', 'LatihanController@Pertambahan');
+Route::get('Kukurangan/{akheu?}/{gow?}', 'LatihanController@Perkurangan');
+Route::get('Babagian/{d?}/{aduh?}', 'LatihanController@Pembagian');
+Route::get('Kakalian/{kimi?}/{jay?}', 'LatihanController@Perkalian');
+Route::get('/data1', 'LatihanController@loop');
+
+
+
+
