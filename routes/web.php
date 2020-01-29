@@ -194,6 +194,15 @@ Route::get('Kukurangan/{akheu?}/{gow?}', 'LatihanController@Perkurangan');
 Route::get('Babagian/{d?}/{aduh?}', 'LatihanController@Pembagian');
 Route::get('Kakalian/{kimi?}/{jay?}', 'LatihanController@Perkalian');
 Route::get('/data1', 'LatihanController@loop');
+Route::get('/data2','LatihanController@loop2');
+
+//CRUD TABUNGAN
+Route::get('tabungan','TabunganController@index');
+Route::get('tabungan/{id}','TabunganController@show');
+Route::get('tabungan-tambah/{nis?}/{nama?}/{kelas?}/{jml?}','TabunganController@store');
+Route::get('tabungan-edit/{id?}/{kims?}{nama?}/{kelas?}/{jml?}');
+Route::get('tabungan-delete/{id?}');
+Route::get('customer-tambah/{kode?}/{name?}/{email?}/{country?}/{city?}/{address?}/{contact_number?}', 'CustomerController@store');
 
 
 

@@ -100,16 +100,43 @@ class LatihanController extends Controller
                 'Uang Tabungan : '.$tabung. '<br>'.
                 'Sisa : Rp.'. $sisa.'<hr>';
 
+            }
+        }
         public function loop2()
         {
             $data = [
-                ['Nama'=>'Kimi', 'Agama'=>'Islam', 'Alamat'=>'Dayeuhkolot', 'Jemis Kelamin'=>'Laki - laki', 'Jabatan'=>'Manager', 'Jam Kerja'=>'6'],
-                ['Nama'=>'Firman', 'Agama'=>'Shinto', 'Alamat'=>'Cedok', 'Jenis Kelamin'=>'Laki - laki', 'Jabatan'=>'Sekretaris', 'Jam Kerja'=>'5'],
-                ['Nama'=>'Jarwo', 'Agama'=>"Kristen", 'Alamat'=>'Katapang', 'Jenis Kelamin'=>'Laki - laki', 'Jabatan'=>'Staff', 'Jam Kerja'=>'4'];
-            ]
+                ['Nama'=>'Kimi', 'Agama'=>'Islam', 'Alamat'=>'Dayeuhkolot', 'Jemis_kelamin'=>'Laki - laki', 'Jabatan'=>'Manager', 'Jam_Kerja'=>'6'],
+                ['Nama'=>'Firman', 'Agama'=>'Shinto', 'Alamat'=>'Cedok', 'Jenis_kelamin'=>'Laki - laki', 'Jabatan'=>'Sekretaris', 'Jam_Kerja'=>'5'],
+                ['Nama'=>'Jarwo', 'Agama'=>'Kristen', 'Alamat'=>'Katapang', 'Jenis_kelamin'=>'Laki - laki', 'Jabatan'=>'Staff', 'Jam_Kerja'=>'4']
+            ];
+            foreach($data as $angsamc => $key ) {
+                $gaji = 5000000;
+
+                if ($key['Jabatan']== 'Manager') {
+                    $gajinya = 5000000;
+                    if ($key['Jam_Kerja']>=250) {
+                        $bonusnya = $gaji*10/100;
+                    }elseif ($key['Jam_Kerja']>=250) {
+                        $bonusnya = $gaji*5/100;
+                    }
+                    else{
+                        $bonusnya = 0;
+                    }
+
+
+                }
+                $gajibersih=$gajinya=$bonusnya;
+                    $potong=$gajibersih*2.5/100;
+                    $totalnya=$gajibersih-$potong;
+                echo 'Nama : ' .$key['Nama']. '<br>'.
+                     'Agama : '.$key['Agama']. '<br>'.
+                     'Alamat : '.$key['Alamat']. '<br>'.
+                     'Jenis kelamin : '.$key['Jenis_kelamin']. '<br>'.
+                     'Jabatan : '.$key['Jabatan']. '<br>'.
+                     'Jam Kerja : '.$key['Jam_Kerja']. '<br>';
+                    }
+
         }
-        };
-    }
 
 }
 
