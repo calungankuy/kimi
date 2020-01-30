@@ -202,8 +202,15 @@ Route::get('tabungan/{id}','TabunganController@show');
 Route::get('tabungan-tambah/{nis?}/{nama?}/{kelas?}/{jml?}','TabunganController@store');
 Route::get('tabungan-edit/{id?}/{kims?}{nama?}/{kelas?}/{jml?}');
 Route::get('tabungan-delete/{id?}');
-Route::get('customer-tambah/{kode?}/{name?}/{email?}/{country?}/{city?}/{address?}/{contact_number?}', 'CustomerController@store');
 
+//CRUD CUSTOMER
+Route::get('customer-tambah/{kode?}/{name?}/{email?}/{country?}/{city?}/{address?}/{contact_number?}', 'CustomerController@store');
+Route::get('customer-show/{id?}/{}/');
+
+// PASSING DATA
+Route::get('pass','PracticeController@pass');
+Route::get('pass1','PracticeController@pass1');
+Route::get('pass2','PracticeController@pass2');
 
 
 
