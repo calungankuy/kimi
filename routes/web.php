@@ -212,5 +212,7 @@ Route::get('pass','PracticeController@pass');
 Route::get('pass1','PracticeController@pass1');
 Route::get('pass2','PracticeController@pass2');
 
+Route::get('pass-tabungan/{id}','PracticeController@pass3');
+
 
 

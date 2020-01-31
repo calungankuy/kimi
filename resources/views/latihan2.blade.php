@@ -8,9 +8,21 @@
 </head>
 <body>
     <center>Daftar Tabungan</center>
-    @foreach ($tabungan as $data)
-        Nama : {{$data ['nama']}}<br>
-        Nis : {{$data ['nis']}}<br>
+    @foreach ($tabungan as $val)
+        Nis : {{$val->nis}}<br>
+        Nama : {{$val->Nama}}<br>
+        Kelas : {{$val->kelas}}<br>
+        Jumlah : {{$val->jml}}<br>
+        @if ($val->$jml >=50000)
+            Jenis Paket : Paket A
+        @elseif ($val->$jml >=25000)
+            Jenis Paket : Paket B
+        @elseif($val->$jml >=10000)
+            Jenis Paket : Paket C
+        @else
+            Jenis Paket : -
+        @endif
+
         <hr>
     @endforeach
 </body>
